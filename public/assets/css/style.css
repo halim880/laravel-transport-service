@@ -1,0 +1,537 @@
+
+/* ---------------------------------</Basic initializations>----------------------------- */
+
+:root{
+    --primary_color: white;
+    --secondary_color: #f5f5f5;
+    --yellow: #FFEF76;
+    --light_green: #77F8F1;
+    --green: #00B586;
+    --blue:#1B4367;
+
+}
+
+*{
+    padding: 0;
+    margin: 0;
+}
+
+ul{
+    list-style: none;
+}
+
+a{
+    text-decoration: none !important;
+}
+
+
+body{
+    background: white;
+}
+
+@font-face {
+    src: url(../fonts/RecoletaAlt-SemiBold.ttf);
+    font-family: rec;
+}
+
+section{
+    padding: 40px 0;
+    margin: 0;
+}
+
+section> .container{
+    max-width: 1200;
+}
+.show{
+    display: block;
+}
+
+.hide{
+    display: none;
+}
+
+/* ---------------------------------</Basic initializations>----------------------------- */
+
+/* ---------------------------------<Navbar Section>----------------------------- */
+#navbar_section .container{
+    position: relative;
+    width: 100%;
+    height: 100px;
+    padding: 0;
+}
+
+#navbar_section .navbar{
+    height: 70px;
+    position: relative;
+    height: 10vh;
+    width: 100%;
+}
+#navbar_section .navbar .navbar-nav{
+    width: 60%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#navbar_section .navbar .navbar-nav .nav-list{
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+#navbar_section .container .navbar .logo{
+    width: 35%;
+    text-decoration: none;
+    font-family: DM Sans;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 108.5%;
+    color: #333333;
+}
+
+.navbar-toggler{
+    cursor: pointer;
+    display: none;
+    position: absolute;
+    top: 50%;
+    right: 5%;
+    transform: translate(-5%, -50%);
+    z-index: 3;
+}
+
+.navbar-toggler img{
+    margin: 0;
+    padding: 0;
+}
+
+#navbar_section .navbar-nav .nav-item .nav-link{
+    text-decoration: none;
+    font-family: DM Sans;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 108.5%;
+    color: #333333;
+
+    transition: all 500ms ease-out;
+
+    padding: 7px 12px;
+    margin: 5px;
+}
+
+#navbar_section .navbar-nav .nav-item .nav-link:hover{
+    background: var(--green);
+    color: var(--primary_color);
+}
+
+#navbar_section .container nav .actions a{
+    font-family: DM Sans;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 21px;
+    outline: none;
+    border: none;
+    width: 100px;
+    height: 42px;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+
+#navbar_section .container nav .actions .login-btn{
+    padding: 8px 26px;
+    width: 100px;
+    height: 42px;
+    margin-right: 10px;
+    background: #FAFAFA;
+    border: 1.5px solid #A7B6C9;
+    transition: 500ms;
+}
+
+#navbar_section .container nav .actions .login-btn:hover{
+    background: #00B586;
+    color: white;
+}
+#navbar_section .container nav .actions .register-btn{
+    background: #333333;
+    color: #FFFFFF;
+    transition: 500ms;
+}
+#navbar_section .container nav .actions .register-btn:hover{
+    background: #FAFAFA;
+    color: rgb(56, 54, 54);
+    border: 1.5px solid #A7B6C9;
+    transition: 500ms;
+}
+
+
+/* ---------------------------------</Header Section>----------------------------- */
+
+/* ---------------------------------<Landing Section>----------------------------- */
+#landing_section{
+    position: relative;
+}
+
+#landing_section .heading{
+    font-family: rec;
+    font-style: normal;
+    font-weight: normal;
+    max-width: 685px;
+    font-size: 90px;
+    line-height: 108.5%;
+    color: #333333;
+}
+
+#landing_section .description{
+    margin: 20px 0;
+    max-width: 558px;
+    font-family: DM Sans;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 159%;
+    letter-spacing: 0.05em;
+}
+
+#landing_section .btn{
+    width: 197px;
+    height: 60px;
+    border-radius: 0;
+    font-family: DM Sans;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 130%;
+    /* identical to box height, or 23px */
+    
+    letter-spacing: 0.04em;
+    
+    color: #FFFFFF;
+    background: #333333;
+    border: none;
+    cursor: pointer;
+    transition: 1s;
+}
+#landing_section .btn:hover{
+    background-color: var(--green);
+    color: var(--secondary_color);
+    border-radius: 10px;
+}
+.green-blur{
+    position: absolute;
+    width: 333px;
+    height: 333px;
+    left: 25%;
+    top: -100px;
+
+    background: var(--green);
+    filter: blur(60px);
+    border-radius: 888px;
+
+    z-index: -1;
+}
+
+.yellow-blur{
+    position: absolute;
+    width: 553px;
+    height: 553px;
+    left: 37%;
+    top: -80px;
+
+    background: var(--yellow);
+    filter: blur(100px);
+    border-radius: 888px;
+    z-index: -1;
+}
+
+.trial{
+    display: flex;
+    font-family: DM Sans;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    margin: 12px 0;
+}
+
+.trial .star{
+    margin-right: 10px;
+}
+
+/* ---------------------------------</Landing Section>----------------------------- */
+
+/* --------------------------------<Footer Section>------------------------------------ */
+#footer{
+    min-height: 400px;
+    background: var(--blue);
+    padding-bottom: 10px !important;
+}
+
+#footer .bottom{
+    min-height: 55px !important;
+}
+#footer .bottom .container{
+    padding: 0;
+    border-top: 1px solid rgba(229, 242, 239, 0.2);
+}
+
+   #footer h3{
+    font-family: DM Sans;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 30px;
+    line-height: 39px;
+    color: #FFFFFF;
+   }
+   #footer p{
+
+    font-family: DM Sans;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 26px;
+    /* or 162% */
+
+
+    /* Colors / White */
+
+    color: #FFFFFF;
+
+    mix-blend-mode: normal;
+   }
+
+#footer input{
+    height: 40px;
+    width: 230px;
+    padding-left: 16px;
+    mix-blend-mode: normal;
+    outline: none;
+    border: 1px solid rgba(229, 242, 239, 0.33);
+    background: #1B4367;
+    color: rgba(229, 242, 239, 0.54);
+    box-sizing: border-box;
+    border-radius: 5px;
+
+    font-family: DM Sans;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 22px;
+}
+
+#footer .subscribe {
+    background: #00B586;
+    border-radius: 0;
+    font-family: DM Sans;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 22px;
+    margin-left: 10px;
+    color: #1B4367;
+    transition: 500ms;
+}
+
+#footer .subscribe:hover{
+    color: white;
+}
+
+#footer h4{
+    font-family: DM Sans;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 28px;
+    /* identical to box height, or 156% */
+
+    text-transform: uppercase;
+    color: #FFFFFF;
+    margin-bottom: 27px;
+}
+
+#footer ul{
+    padding: 0;
+}
+#footer ul li > a{
+    display: inline-block;
+    text-decoration: none;
+    font-family: DM Sans;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 26px;
+    color: #DDDDDD;
+    padding: 7px 10px;
+    transition: 500ms;
+}
+
+#footer ul li > a:hover{
+    color: var(--green);
+}
+
+#footer .copyright{
+    font-family: DM Sans;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 26px;
+
+    color: #E8F9F5;
+}
+
+#footer .bottom ul{
+    margin: 0;
+}
+#footer .bottom ul li{
+    margin-left: 16px;
+}
+
+#footer .bottom ul li .social-icon{
+    padding: 0;
+    margin: 0;
+
+}
+#footer .bottom ul li .social-icon svg{
+    width: 34px;
+    height: 34px;
+    background: #18455df5;
+    color: #FFFFFF;
+    border-radius: 8px;
+    transition: 500ms;
+}
+    
+#footer .bottom ul li .twitter:hover{
+    color: #1DA1F2;
+    background: white;
+    border-radius: 20%;
+}
+#footer .bottom ul li .instagram:hover{
+    color:#e95950;
+    background: white;
+    border-radius: 20%;
+}
+#footer .bottom ul li .youtube:hover{
+    color: #FF0000;
+    background: white;
+    border-radius: 20%;
+}
+#footer .bottom ul li .linkedin:hover{
+    color: #0e76a8;
+    background: white;
+    border-radius: 20%;
+}
+
+#footer .bottom ul li .facebook:hover{
+    background-color: #4267B2;
+    color: white;
+    border-radius: 20%;
+}
+
+/* --------------------------------</Footer Section>----------------------------------- */
+
+
+
+/* --------------------------------</Media Query Section>----------------------------------- */
+@media screen and (max-width: 768px){
+    section> .container{
+        width: 95% !important;
+    }
+
+    /* Navbar Section */
+    .navbar-toggler{
+        display: block;
+    }
+    .navbar-nav{
+        height: 100vh;
+        width: 100% !important;
+        position: fixed;
+        top: 80%;
+        left: 65%;
+        transform: translate(-65%, -80%);
+        padding-top: 80px;
+
+
+
+        clip-path: circle(50px at 100% -10%);
+        --webkit-clip-path: circle(100px at 90% -10%);
+
+        transition: all 1s ease-out;
+
+        /* background: #F5F5F5; */
+        background: var(--blue);
+        opacity: 0.95;
+        pointer-events: all;
+        z-index: 2;
+        flex-direction: column !important;
+        justify-content: space-evenly !important;
+        align-items: center;
+    }
+
+    #navbar_section .navbar .nav-list{
+        flex-direction: column !important;
+        justify-content: center;
+    }
+
+    .navbar-nav.open{
+        clip-path: circle(1200px at 90% 10%);
+        --webkit-clip-path: circle(1200px at 90% 10%);
+    }
+
+    .navbar .nav-item .nav-link{
+        color: var(--secondary_color) !important;
+    }
+
+    .navbar-nav .actions{
+        margin-top: 50px;
+    }
+
+    #header .container .learn{
+        position:absolute;
+        top: 100px;
+        left: 0;
+    }
+    /* Landing section */
+    #landing_section .heading{
+        font-size: 44px;
+    }
+
+    #landing_section .description{
+        font-size: 16px;
+    }
+
+    #landing_section .green-blur{
+        width: 131px;
+        height: 134px;
+        left: 45%;
+        top: -50px;
+        filter: blur(40px);
+    }
+
+    #landing_section .yellow-blur{
+        left: 50%;
+        top: -0;
+        width: 220px;
+        height: 218px;
+        filter: blur(50px);
+    }
+
+    /* Footer section */
+    #footer .copyright{
+        justify-content: center;
+    }
+     #footer .bottom ul{
+         justify-content: center !important;
+     }
+}
+
+
+
+@media (max-width:415px){
+    .container{
+        padding: 0 10px !important;
+    }
+}
+/* --------------------------------</Media Query Section>----------------------------------- */
+
+
