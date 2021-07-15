@@ -20,6 +20,6 @@ class Transport extends Model
         return Carbon::parse($this->created_at)->diffForHumans();
     }
     public function getUpdatedAttribute(){
-        return Carbon::parse($this->updated_at)->diffForHumans();
+        return Carbon::parse($this->updated_at)->format("h:i a");
     }
 }

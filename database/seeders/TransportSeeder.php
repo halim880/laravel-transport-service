@@ -15,6 +15,6 @@ class TransportSeeder extends Seeder
     public function run()
     {
         Transport::truncate();
-        Transport::factory(100)->create();
+        Transport::factory(300)->create();
     }
 }

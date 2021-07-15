@@ -25,14 +25,14 @@ class TransportFactory extends Factory
         return [
             "truck_number"=> rand(100, 1000),
             "place"=> $this->place(),
-            "date"=> Carbon::parse("12/02/2001"),
+            "date"=> Carbon::now()->subDays(rand(0, 90)),
             "point"=> rand(1,5),
             "person"=> $this->faker->firstNameMale." ".$this->faker->lastName,
-            "mobile"=> $this->faker->phoneNumber,
-            "fare"=> 2020,
-            "commission"=> 1000,
+            "mobile"=> $this->phone(),
+            "fare"=> rand(1000, 9000),
+            "commission"=> rand(1000, 9000),
+            "invoice"=> rand(1000, 9000),
             "status"=> "Ok",
-            "invoice"=> 30000,
             "description"=> "due",
         ];
     }
@@ -40,5 +40,9 @@ class TransportFactory extends Factory
     private function place(){
         $places = ["sylhet", "Dhaka", "Chittagong", "Rajshahi", "Khulna", "Borishal"];
         return $places[rand(0,5)];
+    }
+
+    private function phone(){
+        return "01".rand(5,9).rand(1,9).rand(1000000, 9999999);
     }
 }

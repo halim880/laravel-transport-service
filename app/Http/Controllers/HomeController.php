@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Transport;
+use App\Support\MyPaginator;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -24,8 +25,9 @@ class HomeController extends Controller
      */
     public function index()
     {
+        $transports = Transport::orderBy("date", "desc")->get()->groupBy("date");
         return view("home")->with([
-            "transports"=> Transport::orderBy("date", "desc")->paginate(20),
+            "transports"=> MyPaginator::paginate($transports, 30),
         ]);
     }
 }

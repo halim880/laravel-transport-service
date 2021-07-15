@@ -17,23 +17,19 @@
                         </div>
                     @endif
                     <table class="table table-striped">
-                        <tr class="">
-                            <th class="col-1">SI.</th>
-                            <th class="col-1">Truck number</th>
-                            <th class="col-2">Person</th>
-                            <th class="col-2">Date</th>
-                            <th class="col-1">Place</th>
-                            <th class="col-1">Actions</th>
+                        <tr>
+                            <th>Date</th>
+                            <th>Total Entry</th>
+                            <th>Total Commission</th>
+                            <th>Action</th>
                         </tr>
-                        @foreach ($transports as $transport)
-                            <tr class="">
-                                <td class="col-1">{{$transport->id}}</td>
-                                <td class="col-1"><b>{{$transport->truck_number}}</b></td>
-                                <td class="col-2">{{$transport->person}}</td>
-                                <td class="col-2">{{$transport->formated_date}}</td>
-                                <td class="col-2">{{$transport->place}}</td>
+                        @foreach ($transports as $date => $data)
+                            <tr>
+                                <td>{{\Illuminate\Support\Carbon::parse($date)->format("d M Y")}}</td>
+                                <td>{{$data->count()}}</td>
+                                <td>{{$data->sum("commission")}}</td>
                                 <td>
-                                    <a class="btn btn-sm btn-danger" href="{{URL::to("transports/".$transport->id)}}">View</a>
+                                    <a class="btn btn-sm btn-warning" href="{{route("show_by_date", $date)}}">View</a>
                                 </td>
                             </tr>
                         @endforeach

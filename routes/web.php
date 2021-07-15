@@ -1,7 +1,9 @@
 <?php
 
+use App\Support\MyPaginator;
 use App\Http\Controllers\TransportController;
 use App\Http\Controllers\TransportQueryController;
+use App\Models\Transport;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -41,5 +43,7 @@ Route::get("/transport/{transport}/destroy", [TransportController::class, "destr
 Route::post("/transport/{transport}/update", [TransportController::class, "update"]);
 
 
-Route::post("search_by_date", [TransportQueryController::class, "search_by_date"]);
+Route::get("/show_by_date/{date}", [TransportQueryController::class, "show_by_date"])->name("show_by_date");
+Route::post("/search_by_date", [TransportQueryController::class, "search_by_date"])->name("search_by_date");
 Route::get("search_by_date/form", [TransportQueryController::class, "date_form"]);
+
