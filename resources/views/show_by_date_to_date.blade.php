@@ -6,16 +6,13 @@
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header justify-content-between">
-                    <h3 align="center">Recent Data</h3>
-                    <a href="{{URL::to("transports/create")}}" class="btn btn-sm btn-primary">Add new</a>
+                    <h4 align="center">Search result for 
+                        <span style="color:orange">{{$from_date}}</span> to 
+                        <span style="color:orange">{{$to_date}}</span>
+                    </h4>
                 </div>
 
                 <div class="card-body">
-                    @if (session('success'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('success') }}
-                        </div>
-                    @endif
                     <table class="table table-striped">
                         <tr>
                             <th>Date</th>
@@ -35,13 +32,10 @@
                         @endforeach
                         <tr>
                             <td colspan="2"><b>Total Commission</b></td>
-                            <td class="commission"><b>{{$totol_commission}} tk</b></td>
+                            <td class="commission"><b>{{$total_commission}} tk</b></td>
                             <td></td>
                         </tr>
                     </table>
-                    <div class="d-flex justify-content-center">
-                        {!! $transports->links() !!}
-                    </div>
                 </div>
             </div>
         </div>

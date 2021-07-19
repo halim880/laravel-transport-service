@@ -19,10 +19,10 @@
                                     <th>Mobile</th>
                                     <th>Place</th>
                                     <th>Point</th>
-                                    <th>Truck Number</th>
-                                    <th>Fare</th>
-                                    <th>Invoice</th>
-                                    <th>Commission</th>
+                                    <th>Truck no.</th>
+                                    <th class="amount">Fare</th>
+                                    <th class="amount">Invoice/chalan</th>
+                                    <th class="amount">Commission</th>
                                     <th>Status</th>
                                     <th>Description</th>
                                     <th>Updated</th>
@@ -35,9 +35,9 @@
                                         <td>{{$transport->place}}</td>
                                         <td>{{$transport->point}}</td>
                                         <td>{{$transport->truck_number}}</td>
-                                        <td>{{$transport->fare}}</td>
-                                        <td>{{$transport->invoice}}</td>
-                                        <td>{{$transport->commission}}</td>
+                                        <td class="amount">{{$transport->fare}} tk</td>
+                                        <td class="amount">{{$transport->invoice}} tk</td>
+                                        <td class="amount">{{$transport->commission}} tk</td>
                                         <td>{{$transport->status}}</td>
                                         <td>{{$transport->description}}</td>
                                         <td>{{$transport->updated}}</td>
@@ -45,9 +45,9 @@
                                 @endforeach
                                 <tr>
                                     <td colspan="6"><b>Total</b></td>
-                                    <td><b>{{$transports->sum("fare")}}</b></td>
-                                    <td><b>{{$transports->sum("invoice")}}</b></td>
-                                    <td><b>{{$transports->sum("commission")}}</b></td>
+                                    <td class="amount"><b>{{$transports->sum("fare")}} tk</b></td>
+                                    <td class="amount"><b>{{$transports->sum("invoice")}} tk</b></td>
+                                    <td class="amount"><b>{{$transports->sum("commission")}} tk</b></td>
                                     <td colspan="3"></td>
                                 </tr>
                             </table>
@@ -58,3 +58,10 @@
         </div>
     </div>
 @endsection
+
+<style>
+    .amount{
+        text-align: end;
+        padding-right: 30px;
+    }
+</style>

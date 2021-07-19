@@ -45,5 +45,7 @@ Route::post("/transport/{transport}/update", [TransportController::class, "updat
 
 Route::get("/show_by_date/{date}", [TransportQueryController::class, "show_by_date"])->name("show_by_date");
 Route::post("/search_by_date", [TransportQueryController::class, "search_by_date"])->name("search_by_date");
+Route::get("/search_by_date_to_date/form", [TransportQueryController::class, "search_by_date_to_date"])->name("search_by_date_to_date");
+Route::post("/show_by_date_to_date", [TransportQueryController::class, "show_by_date_to_date"])->name("show_by_date_to_date");
 Route::get("search_by_date/form", [TransportQueryController::class, "date_form"]);
 
