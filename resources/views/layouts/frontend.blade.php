@@ -67,10 +67,10 @@
                             <div class="col-md-6">
                                 <h4>Links</h4>
                                 <ul class="p-0">
-                                    <li><a href="#"> Home</a></li>
-                                    <li><a href="">About</a></li>
-                                    <li><a href="">Contact</a></li>
-                                    <li><a href="">Login</a></li>
+                                    <li><a href="{{URL::to("/")}}"> Home</a></li>
+                                    <li><a href="{{URL::to("/about")}}">About</a></li>
+                                    <li><a href="{{URL::to("/contact")}}">Contact</a></li>
+                                    <li><a href="{{route("login")}}">Login</a></li>
                                 </ul>
                             </div>
                         </div>
