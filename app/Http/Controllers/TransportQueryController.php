@@ -8,10 +8,6 @@ use Illuminate\Http\Request;
 
 class TransportQueryController extends Controller
 {
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
     
     public function show_by_date($date){
         return view("show_by_date")->with([

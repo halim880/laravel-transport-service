@@ -26,26 +26,23 @@ Route::get('/about', function () {
     return view('about');
 });
 
-Route::get('/about', function () {
-    return view('about');
-});
-
 Route::get('/contact', function () {
     return view('contact');
 });
 
 Auth::routes([ 'register' => false ]);
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::middleware('auth')->group(function (){
+    Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::resource("/transports", TransportController::class)->except(["update"]);
-Route::get("/transport/{transport}/destroy", [TransportController::class, "destroy"]);
-Route::post("/transport/{transport}/update", [TransportController::class, "update"]);
+    Route::resource("/transports", TransportController::class)->except(["update", "index"]);
+    Route::get("/transport/{transport}/destroy", [TransportController::class, "destroy"]);
+    Route::post("/transport/{transport}/update", [TransportController::class, "update"]);
 
-
-Route::get("/show_by_date/{date}", [TransportQueryController::class, "show_by_date"])->name("show_by_date");
-Route::post("/search_by_date", [TransportQueryController::class, "search_by_date"])->name("search_by_date");
-Route::get("/search_by_date_to_date/form", [TransportQueryController::class, "search_by_date_to_date"])->name("search_by_date_to_date");
-Route::post("/show_by_date_to_date", [TransportQueryController::class, "show_by_date_to_date"])->name("show_by_date_to_date");
-Route::get("search_by_date/form", [TransportQueryController::class, "date_form"]);
+    Route::get("/show_by_date/{date}", [TransportQueryController::class, "show_by_date"])->name("show_by_date");
+    Route::post("/search_by_date", [TransportQueryController::class, "search_by_date"])->name("search_by_date");
+    Route::get("/search_by_date_to_date/form", [TransportQueryController::class, "search_by_date_to_date"])->name("search_by_date_to_date");
+    Route::post("/show_by_date_to_date", [TransportQueryController::class, "show_by_date_to_date"])->name("show_by_date_to_date");
+    Route::get("search_by_date/form", [TransportQueryController::class, "date_form"]);
+});
 

@@ -6,7 +6,7 @@
             <div class="col-md-8">
                 <div class="card">
                     <div class="card-header">
-                        Create new Invoice
+                        <h3>Edit info</h3>
                     </div>
                     <div class="card-body p-4">
                         <form action="{{URL::to("transport/".$transport->id."/update")}}" method="POST">

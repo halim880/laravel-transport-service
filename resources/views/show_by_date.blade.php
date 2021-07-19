@@ -1,10 +1,10 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="container">
+    <div class="p-4 mx-auto" style="width: 1340px">
         <div class="row">
             <div class="col-md-12">
-                <div class="card">
+                <div class="card mx-4">
                     <div class="card-header">
                         <h4>{{$date}}</h4>
                     </div>
@@ -26,6 +26,7 @@
                                     <th>Status</th>
                                     <th>Description</th>
                                     <th>Updated</th>
+                                    <th>Action</th>
                                 </tr>
                                 @foreach ($transports as $transport)
                                     <tr>
@@ -41,6 +42,9 @@
                                         <td>{{$transport->status}}</td>
                                         <td>{{$transport->description}}</td>
                                         <td>{{$transport->updated}}</td>
+                                        <td>
+                                            <a class="btn btn-sm btn-warning" href="{{route("transports.show", $transport)}}">view</a>
+                                        </td>
                                     </tr>
                                 @endforeach
                                 <tr>
@@ -48,7 +52,7 @@
                                     <td class="amount"><b>{{$transports->sum("fare")}} tk</b></td>
                                     <td class="amount"><b>{{$transports->sum("invoice")}} tk</b></td>
                                     <td class="amount"><b>{{$transports->sum("commission")}} tk</b></td>
-                                    <td colspan="3"></td>
+                                    <td colspan="4"></td>
                                 </tr>
                             </table>
                         @endif
